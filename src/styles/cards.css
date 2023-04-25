@@ -1,13 +1,16 @@
 .card {
   height: 200px;
-  width: 150px;
+  width: 350px;
+  border-radius: 8px;
   border: 1px solid blue;
 }
 
 .container {
+  height: 100vh;
+  padding: 30px;
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
   justify-content: center;
   border: 1px solid black;
 }
