@@ -1,21 +1,33 @@
 .card {
-  height: 200px;
-  width: 350px;
-  border-radius: 8px;
-  border: 1px solid blue;
-}
+  border: 1px solid #0000ff;
 
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 .container {
   height: 100vh;
   padding: 30px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 35px;
   justify-content: center;
   border: 1px solid black;
 }
 
 img {
-  height: 100%;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#kubrick,
+#coppola,
+#godard,
+#kurosawa,
+#scorsese,
+#pta,
+#speilberg {
+  height: 50px;
 }
