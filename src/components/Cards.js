@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/cards.css";
 import bergman from "../pictures/bergman.avif";
@@ -16,17 +16,27 @@ import villeneuve from "../pictures/villeneuve.jpeg";
 import Card from "./Card";
 
 const Cards = () => {
+  const [cardArray, setCardArray] = useState([
+    bergman,
+    tarkovsky,
+    kubrick,
+    coppola,
+    speilberg,
+    kurosawa,
+    fellini,
+    godard,
+    pta,
+  ]);
+
+  const shuffle = () => {
+    setCardArray([...cardArray].sort(() => (Math.random() > 0.5 ? 1 : -1)));
+  };
+
   return (
     <div className="container">
-      <Card src={tarkovsky} className="card" />
-      <Card src={bergman} className="card" />
-      <Card src={kubrick} className="card" />
-      <Card src={coppola} className="card" />
-      <Card src={speilberg} className="card" />
-      <Card src={kurosawa} className="card" />
-      <Card src={fellini} className="card" />
-      <Card src={godard} className="card" />
-      <Card src={pta} className="card" />
+      {cardArray.map((item) => {
+        return <Card src={item} onClick={shuffle} />;
+      })}
     </div>
   );
 };
