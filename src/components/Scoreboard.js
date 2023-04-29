@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "../styles/scoreboard.css";
-const Scoreboard = () => {
-  const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
-
+const Scoreboard = ({ score, bestScore }) => {
   return (
     <div className="scoreboard">
       <h3>Current Score: {score}</h3>
