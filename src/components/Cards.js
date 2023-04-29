@@ -4,7 +4,7 @@ import "../styles/cards.css";
 
 import Card from "./Card";
 
-const Cards = ({ cardArray }) => {
+const Cards = ({ cardArray, shuffle }) => {
   return (
     <div className="container">
       {cardArray.map((item) => {
