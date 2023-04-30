@@ -2,16 +2,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import Scoreboard from "./components/Scoreboard";
 import Cards from "./components/Cards";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import bergman from "./pictures/bergman.avif";
 import tarkovsky from "./pictures/tarkovsky.jpeg";
-
 import coppola from "./pictures/coppola.jpeg";
 import fellini from "./pictures/fellini.jpeg";
 import godard from "./pictures/godard.jpeg";
 import kurosawa from "./pictures/kurosawa.jpeg";
 import pta from "./pictures/pta.jpeg";
-
 import speilberg from "./pictures/speilberg.jpeg";
 import kubrick from "./pictures/stanley.jpeg";
 
@@ -30,15 +28,31 @@ const App = () => {
     { name: pta, id: "pta" },
   ]);
 
-  const shuffle = (e) => {
+  const shuffle = () => {
     setCardArray([...cardArray].sort(() => (Math.random() > 0.5 ? 1 : -1)));
-    console.log(e.target.id);
   };
 
+  const cardChecker = (id) => {
+    let arr = [];
+
+    const checker = (id) => {
+      if (arr.includes(id)) {
+        alert("this card was clicked on before!");
+      } else {
+        arr.push(id);
+        console.log(arr);
+        return arr;
+      }
+    };
+  };
+  const mainFunction = (e) => {
+    shuffle();
+    cardChecker(e.target.id);
+  };
   return (
     <div className="App">
       <Scoreboard score={score} bestScore={bestScore} />
-      <Cards cardArray={cardArray} shuffle={shuffle} />
+      <Cards cardArray={cardArray} mainFunction={mainFunction} />
     </div>
   );
 };

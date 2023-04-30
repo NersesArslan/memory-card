@@ -4,11 +4,11 @@ import "../styles/cards.css";
 
 import Card from "./Card";
 
-const Cards = ({ cardArray, shuffle }) => {
+const Cards = ({ cardArray, mainFunction }) => {
   return (
     <div className="container">
       {cardArray.map((item) => {
-        return <Card src={item.name} id={item.id} onClick={shuffle} />;
+        return <Card src={item.name} id={item.id} onClick={mainFunction} />;
       })}
     </div>
   );
