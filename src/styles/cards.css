@@ -19,13 +19,3 @@ img {
   min-width: 100%;
   min-height: 100%;
 }
-
-#kubrick,
-#coppola,
-#godard,
-#kurosawa,
-#scorsese,
-#pta,
-#speilberg {
-  height: 50px;
-}

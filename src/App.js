@@ -19,19 +19,20 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [cardArray, setCardArray] = useState([
-    bergman,
-    tarkovsky,
-    kubrick,
-    coppola,
-    speilberg,
-    kurosawa,
-    fellini,
-    godard,
-    pta,
+    { name: bergman, id: "bergman" },
+    { name: tarkovsky, id: "tarkovsky" },
+    { name: kubrick, id: "kubrick" },
+    { name: coppola, id: "coppola" },
+    { name: speilberg, id: "speilberg" },
+    { name: kurosawa, id: "kurosawa" },
+    { name: fellini, id: "fellini" },
+    { name: godard, id: "godard" },
+    { name: pta, id: "pta" },
   ]);
 
-  const shuffle = () => {
+  const shuffle = (e) => {
     setCardArray([...cardArray].sort(() => (Math.random() > 0.5 ? 1 : -1)));
+    console.log(e.target.id);
   };
 
   return (

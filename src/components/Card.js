@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/cards.css";
+
 const Card = (props) => {
   const { src, id, onClick } = props;
   return (
