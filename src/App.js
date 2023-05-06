@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Scoreboard from "./components/Scoreboard";
 import Cards from "./components/Cards";
@@ -12,6 +11,9 @@ import kurosawa from "./pictures/kurosawa.jpeg";
 import pta from "./pictures/pta.jpeg";
 import speilberg from "./pictures/speilberg.jpeg";
 import kubrick from "./pictures/stanley.jpeg";
+import { click } from "@testing-library/user-event/dist/click";
+
+let clickedCards = [];
 
 const App = () => {
   const [score, setScore] = useState(0);
@@ -32,27 +34,28 @@ const App = () => {
     setCardArray([...cardArray].sort(() => (Math.random() > 0.5 ? 1 : -1)));
   };
 
-  const cardChecker = (id) => {
-    let arr = [];
+  const trackCards = (e) => {
+    if (clickedCards.includes(e.target.id)) {
+      clickedCards = [];
+      setScore(0);
+    } else {
+      clickedCards.push(e.target.id);
+      setScore(score + 1);
+    }
+  };
 
-    const checker = (id) => {
-      if (arr.includes(id)) {
-        alert("this card was clicked on before!");
-      } else {
-        arr.push(id);
-        console.log(arr);
-        return arr;
-      }
-    };
-  };
-  const mainFunction = (e) => {
-    shuffle();
-    cardChecker(e.target.id);
-  };
+  console.log(clickedCards);
+
   return (
     <div className="App">
       <Scoreboard score={score} bestScore={bestScore} />
-      <Cards cardArray={cardArray} mainFunction={mainFunction} />
+      <Cards
+        cardArray={cardArray}
+        onClick={(e) => {
+          shuffle();
+          trackCards(e);
+        }}
+      />
     </div>
   );
 };
