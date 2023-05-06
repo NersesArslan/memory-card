@@ -1,0 +1,2 @@
+body,html{margin:0;padding:0}.App{display:flex;flex-direction:column}.scoreboard{flex-direction:column}.card,.scoreboard{display:flex;justify-content:center;align-items:center}.card{border:1px solid #00f;overflow:hidden}.container{height:1000px;padding:40px;display:grid;grid-gap:30px;gap:30px;grid-template-columns:repeat(3,230px);justify-content:center;border:1px solid #000}img{min-width:100%;min-height:100%}
+/*# sourceMappingURL=main.dfb4a346.chunk.css.map */
