@@ -7,9 +7,10 @@
   overflow: hidden;
 }
 .container {
-  height: 100vh;
+  height: 1000px;
+  padding: 40px;
   display: grid;
-
+  gap: 30px;
   grid-template-columns: repeat(3, 230px);
   justify-content: center;
   border: 1px solid black;

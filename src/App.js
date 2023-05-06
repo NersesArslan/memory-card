@@ -37,6 +37,10 @@ const App = () => {
   const trackCards = (e) => {
     if (clickedCards.includes(e.target.id)) {
       clickedCards = [];
+      if (score > bestScore) {
+        setBestScore(score);
+      }
+
       setScore(0);
     } else {
       clickedCards.push(e.target.id);
