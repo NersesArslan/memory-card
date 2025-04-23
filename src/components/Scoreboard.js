@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/scoreboard.css";
 const Scoreboard = ({ score, bestScore }) => {
   return (

@@ -1,7 +1,8 @@
 import "./App.css";
+import React from "react";
 import Scoreboard from "./components/Scoreboard";
 import Cards from "./components/Cards";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import bergman from "./pictures/bergman.avif";
 import tarkovsky from "./pictures/tarkovsky.jpeg";
 import coppola from "./pictures/coppola.jpeg";
@@ -11,7 +12,6 @@ import kurosawa from "./pictures/kurosawa.jpeg";
 import pta from "./pictures/pta.jpeg";
 import speilberg from "./pictures/speilberg.jpeg";
 import kubrick from "./pictures/stanley.jpeg";
-import { click } from "@testing-library/user-event/dist/click";
 
 let clickedCards = [];
 
