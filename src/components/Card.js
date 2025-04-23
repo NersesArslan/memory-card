@@ -5,7 +5,7 @@ const Card = (props) => {
   const { src, id, onClick } = props;
   return (
     <div className="card">
-      <img src={src} id={id} onClick={onClick} />
+      <img src={src} id={id} onClick={onClick} alt="director" />
     </div>
   );
 };
